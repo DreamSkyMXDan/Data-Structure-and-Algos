@@ -44,7 +44,7 @@ public class LRUCache {
      * @return the value corresponding to the key
      */
     public int get(int key) {
-        int ret = -1;
+        int ret = Integer.MIN_VALUE;
         if(hm.containsKey(key)){
             DListNode node = hm.get(key);
             ret = node.val;
