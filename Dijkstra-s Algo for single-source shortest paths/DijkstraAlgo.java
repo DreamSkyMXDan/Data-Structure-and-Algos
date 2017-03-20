@@ -1,16 +1,12 @@
-package com.mystanford.algo;
-
-import com.mystanford.algo.Graph.Edge;
-
-/**
- * Created by daniel shen on 3/16/2017.
- */
-
 public class DijkstraAlgo {
     private Graph graph;
     private BinaryMinHeap bMinHeap;
     private int singleSrc;
+    // distances[i] stands for the distance from i to source 
+    // since each edge's weight is no less than 0, -1 is used to represent infinite distance between the vertex to the source.
     private int[] distances;
+    // parents[i] stands for the vertex's id that points to the current vertex i. 
+    // With parents array, the shortest path could be easily constructed with retrogression.
     private int[] parents;
 
     /**
@@ -65,5 +61,13 @@ public class DijkstraAlgo {
         // init singleSource
         distances[singleSrc] = 0;
         bMinHeap.insert(singleSrc, 0);
+    }
+    
+    public int[] getDistances(){
+        return distances;
+    }
+    
+    public int[] getParentsPaths(){
+        return parents;
     }
 }
