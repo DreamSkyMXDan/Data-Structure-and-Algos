@@ -1,7 +1,6 @@
 # Data-Structure-and-Algos
 Code written by me for some Data Structure and Algorithms issues.
-I try to write the explanation and readme file in details and treat them as my INFOCOM paper. 
-Everyone is welcomed to refer to my code.
+Everyone is welcomed to refer to my code and let me know if you encounter any issues.
 
 1. LRUCache <br />
 A simple Least Recently Used(LRU) cache data structure is defined and implemented. <br /><br />
@@ -15,5 +14,6 @@ Time Complexity Analysis: Each extract-min operation takes time O(lgV) and there
 There is a straightforward way of implementation which is to use array instead of binary minheap for the priority queue. In that case, the time complexity is dominated by the extract-min operation since each one takes O(V) time, and the total running time is O(VE).<br /> <br />
 If the graph is sparse enough, my Dijsktra's algo with binary minHeap will beat the O(VE) running time since O(ElgV) is much faster than that if V is a huge number.<br /> <br />
 Test cases: the format is that in each line, the first number is the id of the vertex, followed by an array of its neigbor and the edge weight, the neigbor id and edge weight is seperated by comma. Each component in the row is seperated by a tab. <br /> <br />
-Result and Conclusion: small test case is easy to be judged, while results of larger test cases will be given here. Suppose the source is vertex 1, its shortest distance to vertex 5 is 2525, 3540 to vertex 29 and 3068 to vertex 197.
-
+Result and Conclusion: small test case is easy to be judged, while results of larger test cases will be given here. Suppose the source is vertex 1, its shortest distance to vertex 5 is 2525, 3540 to vertex 29 and 3068 to vertex 197.<br /> <br /> <br /> <br />
+3. Huffman Compression and Decompression<br />
+Huffman Coding steps are described and implementated here. The compress method takes in two parameters, a byte array and a a BinaryOutput. It includes 5 steps. First, a hashMap is built to reflect the frequency of each character in the input byte array. Second, the Huffman Tree is built based on the freqMap utilizing the minHeap. Third, the codeTable is built upon freqMap, mapping the character to its coded binary string. Forth, the huffman tree and the number of input byte are written out to the outputstream. Finally, the input array's codes are written out. The decompress method takes in a BinaryInput object and returns a byte array. Codes are well commented. In the application, for compression, an byte array should be constructed from the input File but it is easy to accomplish, for decompression, a byte array will be returned to futher manipulate the data easily. The coding is inspired by Algorithms of Princeton.<br /> <br />
